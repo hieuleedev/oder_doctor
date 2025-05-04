@@ -1,0 +1,89 @@
+/* src/ChatBot.css */
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .chat-header {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #4A90E2;
+  }
+  
+  .chat-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    margin: 10px 0;
+  }
+  
+  .message.user {
+    text-align: right;
+    color: #000;
+  }
+  
+  .message.bot {
+    text-align: left;
+    color: #0078D4;
+  }
+  
+  .message p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 80%;
+  }
+  
+  .message.user p {
+    background-color: #d1f1d1;
+  }
+  
+  .message.bot p {
+    background-color: #e6e6e6;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  
+  .input-container input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 1em;
+    outline: none;
+  }
+  
+  .input-container button {
+    padding: 10px 20px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .input-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .input-container input:focus {
+    border-color: #4A90E2;
+  }
+  
