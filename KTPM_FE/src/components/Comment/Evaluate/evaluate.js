@@ -37,8 +37,12 @@ function Evaluate( { Listcomment } ) {
                         </div>
                 
                         <span className="Evaluate_count">
-                            {` Điểm Đánh Giá : ${comment ? comment.star : ''}`}
-                        </span>
+  Đánh giá:
+  {Array.from({ length: parseInt(comment.star) }, (_, i) => (
+    <span key={i} style={{ color: '#ffc107', fontSize: '18px' }}>★</span>
+  ))} ({comment.star})
+</span>
+
                         <br />
                         <span className="Evaluate_content">
                             {`  Nội Dung : ${comment ? comment.content : ''}`}

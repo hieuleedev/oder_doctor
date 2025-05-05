@@ -66,7 +66,7 @@ function Comment() {
     const id = getCookie("id");
     const [shouldReload, setShouldReload] = useState(false);
     const [evalua, setEvalua] = useState({
-        star: '',
+        star: '1',
         content: '',
         comment_img: '',
         idUser: id,
