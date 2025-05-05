@@ -28,10 +28,10 @@ router.post('/', async (req, res) => {
 // Lấy phòng khám theo idDoctor
 router.get('/:id', async (req, res) => {
     const id = req.params.id;
-   //console.log("id",id)
+   console.log("id",typeof id)
     try {
         const clinic = await Clinic.findOne({
-            where: { idDoctor: id },
+            where: { idDoctor: Number(id) },
             include: [{ model: Account }],
             raw: true,
             nest: true // cần thiết để giữ object lồng nhau

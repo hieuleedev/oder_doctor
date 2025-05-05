@@ -22,7 +22,7 @@ const Book = sequelize.define('Book', {
 
 }, {
   tableName: 'book',
-  timestamps: false
+  timestamps: true
 });
 
 module.exports = Book;

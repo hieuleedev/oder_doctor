@@ -9,7 +9,8 @@ const Comment = sequelize.define('Comment', {
     type: DataTypes.STRING
   },
   comment_img: {
-    type: DataTypes.STRING
+    type: DataTypes.TEXT, // sửa từ STRING thành TEXT để lưu base64
+    allowNull: true
   },
   idUser: {
     type: DataTypes.INTEGER,
@@ -20,7 +21,7 @@ const Comment = sequelize.define('Comment', {
   }
 }, {
   tableName: 'Comment',
-  timestamps: false
+  timestamps: true
 });
 
 module.exports = Comment;

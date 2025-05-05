@@ -64,28 +64,32 @@ function Comment() {
         },
     };
     const id = getCookie("id");
+    const [shouldReload, setShouldReload] = useState(false);
     const [evalua, setEvalua] = useState({
         star: '',
         content: '',
         comment_img: '',
-        iduser: id,
+        idUser: id,
     })
     const dispatch = useDispatch();
     const handleClickAddComment = () => {
         dispatch(createComment.createCommentRequest(evalua));
-        setOpen(!open)
-
+        setTimeout(() => {
+            dispatch(getFullComment.getFullCommentRequest());
+        }, 500); // Đợi 0.5s để comment được thêm trước khi fetch
+        setOpen(false);
         setEvalua({
             star: '',
             content: '',
             comment_img: '',
-            iduser: id,
-        })
-    }
+            idUser: id,
+        });
+    };
+    
 
     useEffect(() => {
         dispatch(getFullComment.getFullCommentRequest())
-    }, [dispatch, open])
+    }, [dispatch, open,shouldReload])
     const Listcomment = useSelector(state => state.getFullComment.data);
     console.log('full comment : ', Listcomment);
 

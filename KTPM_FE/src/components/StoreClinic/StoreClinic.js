@@ -22,9 +22,6 @@ function StoreClinic() {
 
             dispatch(getBook.getBookRequest(id));
         }
-
-
-
     }, [dispatch, ref])
 
     const listBook = useSelector(state => state.getMyBook.Data);
@@ -87,7 +84,7 @@ function StoreClinic() {
                                     <td> {book?.Clinic?.name} </td>
                                     <td> {book?.Clinic?.phonenumber} </td>
 
-                                    <td><button onClick={() => { handleClickRemoveBook(book._id) }} className="removeForBook"> Hủy </button> </td>
+                                    <td><button onClick={() => { handleClickRemoveBook(book.id) }} className="removeForBook"> Hủy </button> </td>
 
 
 

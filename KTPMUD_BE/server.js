@@ -13,7 +13,6 @@ const getcomment = require("./src/routers/getcomment")
 const routerClinic = require("./src/routers/routeClinic")
 const routerBook = require( "./src/routers/routeBook" )
 const routerContact = require( "./src/routers/routeContact" )
-const routerChatAI = require("./src/routers/routeChatAI.js")
 
 
 // khai báo port
@@ -39,7 +38,6 @@ app.use('/user', routerUser);
 
 app.use('/clinic', routerClinic);
 
-app.use('/chat', routerChatAI);
 
 app.use('/book', routerBook);
 

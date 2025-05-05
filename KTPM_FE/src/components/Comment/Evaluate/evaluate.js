@@ -3,23 +3,39 @@ import "./evaluate.css";
 // import { useDispatch } from "react-redux";
 // import { useEffect } from "react";
 // import { getFullComment } from "../../../redux/actions";
+import { useState, useEffect } from "react";
 function Evaluate( { Listcomment } ) {
 
     console.log(' props 2',Listcomment);
 
     // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(getFullComment.getFullCommentRequest())
-    // }, [dispatch])
+    //  useEffect(() => {
+    //      console.log()
+    //  }, [Listcomment])
     // const listcomment = useSelector(state => state.getFullComment.data);
    
     return (
         <>
             {Listcomment && Listcomment.length > 0 &&  Listcomment.map((comment, index) => {
                 return (
-                
                     <div key={index} className="Evaluate">
-                        <img className="avatar_user image_user_avatar" src={comment.iduser != null ? comment.iduser.avatar : 'https://phongreviews.com/wp-content/uploads/2022/11/avatar-facebook-mac-dinh-8.jpg' } alt="" />
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            <img
+                                className="avatar_user image_user_avatar"
+                                src={
+                                    comment.Account != null
+                                        ? comment.Account.avatar
+                                        : 'https://phongreviews.com/wp-content/uploads/2022/11/avatar-facebook-mac-dinh-8.jpg'
+                                }
+                                alt=""
+                                style={{ width: '40px', height: '40px', borderRadius: '50%' }}
+                            />
+                            <span>{comment?.Account?.name}</span>
+                            <span style={{ fontSize: '12px', color: '#777' }}>
+            {`Thời gian: ${new Date(comment.createdAt).toLocaleString('vi-VN')}`}
+        </span>
+                        </div>
+                
                         <span className="Evaluate_count">
                             {` Điểm Đánh Giá : ${comment ? comment.star : ''}`}
                         </span>
@@ -31,7 +47,8 @@ function Evaluate( { Listcomment } ) {
                             <img className="img_evalua" src={comment ? comment.comment_img : ''} alt="" />
                         </div>
                     </div>
-                )
+                );
+                
             })}
         </>
     );

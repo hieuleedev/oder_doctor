@@ -1,114 +1,190 @@
-.commentfromuser {
-    height: 300px;
-    width: 350px;
-    display: flex;
-    flex-wrap: wrap;
-
-    align-items: center;
-    margin: auto;
-    padding: 10px;
-    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
-    margin: 10px auto;
+/* Vùng comment chính */
+#comment {
+    padding: 60px 20px;
+    background: #f2f7f9;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.commentfromuser img {
-    flex: 1;
-    border-radius: 50px;
-    height: 60px;
+/* Container trung tâm */
+.container.comment {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.commentfromuser input {
-    flex: 19;
-    margin-left: 10px;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-}
-
-.comment_item {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin: 20px 0px;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-    border-radius: 15px;
-}
-
-.comment_item img {
-    height: 60px;
-    width: 60px;
-    border-radius: 50px;
-}
-
-.comment_item span {
-    padding-left: 20px;
-}
-
-.comment_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.commentfromuser_item {
-    width: 100%;
-}
-
-.commentfromuser_item input {
-    width: 90%;
-}
-
+/* Nút thêm bình luận */
 .addacomment {
-    padding: 16px 19px;
-    border-radius: 48px;
-    border: none;
-    background: #89e8d1;
-    cursor: pointer;
-    font-size: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50px;
-
-}
-
-.closeModal {
-    font-size: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.closeModal:hover {
-    font-size: 25px;
-}
-
-.btn_add_an_comment {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    background: #98f4df;
-    transition: all 0.3s ease;
-}
-
-.btn_add_an_comment:hover {
-    background: #c8f4ea;
-
-}
-
-
-.btn_click_openmodal_evaluate {
     position: absolute;
-    right: 50px;
-    top: 50%;
-    padding: 10px;
-    color: rgb(224, 255, 47);
-    border-radius: 50px;
-    font-size: 20px;
-    background-color: #1a4f42;
-    cursor: pointer;
-    outline: none;
+    top: -20px;
+    right: 0;
+    background-color: #00b894;
+    color: #fff;
     border: none;
+    padding: 14px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.addacomment:hover {
+    background-color: #019174;
+}
+
+/* Form đánh giá */
+.commentfromuser {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.commentfromuser_item label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #2d3436;
+}
+
+.commentfromuser_item input,
+.commentfromuser_item select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    background-color: #f9f9f9;
+}
+
+.commentfromuser_item input:focus,
+.commentfromuser_item select:focus {
+    border-color: #00cec9;
+    background-color: #fff;
+}
+
+/* Nút submit */
+.btn_add_an_comment {
+    padding: 12px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn_add_an_comment:hover {
+    background: #086dd6;
+}
+
+/* Nút đóng modal */
+.closeModal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #2d3436;
+}
+
+/* Nút xem thống kê đánh giá */
+.btn_click_openmodal_evaluate {
+    background-color: #fdcb6e;
+    color: #2d3436;
+    padding: 10px 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+.btn_click_openmodal_evaluate:hover {
+    background-color: #e4b352;
+}
+
+/* Danh sách bình luận */
+.comment_list {
+    margin-top: 40px;
+}
+
+/* Phần đánh giá từng người dùng */
+.Evaluate {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Avatar và tên canh hàng ngang */
+.Evaluate .image_user_avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.Evaluate span {
+    font-size: 15px;
+    color: #2d3436;
+}
+
+.Evaluate .Evaluate_count {
+    font-weight: 600;
+    color: #e17055;
+}
+
+.Evaluate .Evaluate_content {
+    color: #636e72;
+}
+
+.Evaluate .Evaluate_img img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Avatar + tên canh ngang */
+.Evaluate {
+    display: flex;
+    flex-direction: column;
+}
+.Evaluate_header {
+    display: flex;
+    align-items: center;
+}
+
+/* Modal overlay fix */
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    z-index: 999;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .commentfromuser {
+        padding: 20px;
+    }
+
+    .btn_add_an_comment,
+    .btn_click_openmodal_evaluate {
+        width: 100%;
+    }
+
+    .Evaluate .Evaluate_img img {
+        width: 100%;
+    }
 }

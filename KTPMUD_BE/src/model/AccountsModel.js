@@ -1,7 +1,5 @@
-const {  DataTypes } = require('sequelize');
-const {sequelize} = require('../db.js');
-
-
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../db.js');
 
 // Định nghĩa model
 const Account = sequelize.define('Account', {
@@ -14,7 +12,7 @@ const Account = sequelize.define('Account', {
     allowNull: true
   },
   avatar: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT, // sửa từ STRING thành TEXT để lưu base64
     allowNull: true
   },
   name: {
@@ -41,6 +39,5 @@ const Account = sequelize.define('Account', {
   tableName: 'Account',
   timestamps: false
 });
-
 
 module.exports = Account;

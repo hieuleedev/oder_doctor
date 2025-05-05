@@ -4,14 +4,14 @@ const {Book,Clinic,Contact,Account,Comment} = require('../model/index.js');
 
 // Tạo comment mới
 router.post('/', async (req, res) => {
-    const { star, content, comment_img, iduser } = req.body;
+    const { star, content, comment_img, idUser } = req.body;
 
     try {
         const comment = await Comment.create({
             star,
             content,
             comment_img,
-            iduser
+            idUser
         });
 
         res.json({

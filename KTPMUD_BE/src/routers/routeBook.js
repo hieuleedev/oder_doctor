@@ -50,14 +50,13 @@ router.delete('/user/:id', async (req, res) => {
 // Lấy danh sách lịch khám (GET)
 router.get('/user/:id', async (req, res) => {
     const id = req.params.id;
-    console.log("id111",id)
     try {
         let data;
 
         if (id === 'all') {
-            console.log("all",)
+            
             data = await Book.findAll({ include: [Clinic, Account] });
-        } else if ([1, 2, 3].includes(id)) {
+        } else if ([1, 2, 3].includes(Number(id))) {
             data = await Book.findAll({
                 where: { idClinic: id },
                 include: [Clinic, Account],
@@ -65,7 +64,7 @@ router.get('/user/:id', async (req, res) => {
                 nest: true // cần thiết để giữ object lồng nhau
             });
         } else {
-           // console.log("thoe nguoi dung",)
+            //console.log("thoe nguoi dung",)
             data = await Book.findAll({
                 where: { iduser: id },
                 include: [Clinic, Account],
