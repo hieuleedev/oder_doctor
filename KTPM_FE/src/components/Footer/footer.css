@@ -1,32 +1,61 @@
-#footer{
+#footer {
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    padding: 30px 0px;
+    padding: 40px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+    color: #333;
 }
-.footer{
+
+.footer.container {
     display: flex;
-   justify-content: center;
- 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 1200px;
 }
-.footer_img{
+
+.footer_section {
+    flex: 1 1 220px;
+    padding: 10px 20px;
+}
+
+.footer_section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #22696b;
+}
+
+.footer_section p {
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer_img {
     background: url(../../image/răng_logo-removebg-preview.png) center no-repeat;
     background-size: contain;
     flex: 1;
+    height: 100px;
+    margin-bottom: 20px;
 }
-.footer_content{
-    flex: 1;
-}
-.footer_content span{
+
+.footer_bottom {
     width: 100%;
-    margin: 10px 0px;
-    padding: 10px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #444;
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
 }
-.hotline{
+
+.hotline {
     font-size: 20px;
-    color: #333;
-    font-weight: 600;
-   
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
 }
