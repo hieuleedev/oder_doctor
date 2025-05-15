@@ -64,6 +64,7 @@ function StoreClinic() {
                     <tr>
                         <th>Tên</th>
                         <th>Thời gian khám</th>
+                        <th>Ngày khám</th>
                         <th>Phòng Khám</th>
 
                         <th>SĐT Phòng Khám</th>
@@ -81,6 +82,7 @@ function StoreClinic() {
                                 <tr key={index}>
                                     <td> {book?.Account?.name} </td>
                                     <td> {book?.typeTime} </td>
+                                    <td>{new Date(book?.dayTime).toLocaleDateString('vi-VN')}</td>
                                     <td> {book?.Clinic?.name} </td>
                                     <td> {book?.Clinic?.phonenumber} </td>
 

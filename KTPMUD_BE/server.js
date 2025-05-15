@@ -4,6 +4,7 @@ const express = require('express');
 var path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser')
+const multer = require("multer");
 //import thư viện do mình tạo
 const routerLogin = require("./src/routers/routeLogin.js")
 const routerRegister = require("./src/routers/routeRegister")
@@ -26,6 +27,7 @@ app.use(cors());
 app.use(cookieParser())
 //dùng bodyparser
 app.use(bodyParser.json({ limit: '100mb' }));
+app.use("/uploads", express.static(path.join(__dirname, "src/uploads"))); 
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
 app.use('/login', routerLogin);

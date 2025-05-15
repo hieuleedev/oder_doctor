@@ -5,12 +5,17 @@ const {Book,Clinic,Contact, Account} = require('../model/index.js');
 
 // Tạo lịch khám (POST)
 router.post('/', async (req, res) => {
-    const { typeTime, idClinic, iduser } = req.body;
-    const id = Number(iduser)
-    console.log("req.body",req.body)
+    const { typeTime, idClinic, iduser, date } = req.body;
+    const id = Number(iduser);
+
     try {
         const existing = await Book.findOne({
-            where: { typeTime, idClinic,idUser: id}
+            where: {
+                typeTime,
+                dayTime: date,
+                idClinic,
+                idUser: id
+            }
         });
 
         if (existing) {
@@ -21,18 +26,28 @@ router.post('/', async (req, res) => {
             });
         }
 
-        const newBooking = await Book.create({ typeTime, idClinic, idUser: id });
+        const newBooking = await Book.create({
+            typeTime,
+            idClinic,
+            idUser: id,
+            dayTime: date
+        });
 
         res.json({
             message: 'Đã tạo lịch khám thành công',
             errcode: 0,
             data: newBooking
         });
+
     } catch (err) {
         console.error(err);
-        res.status(500).json('error from server');
+        res.status(500).json({
+            message: 'Lỗi từ server',
+            errcode: 2
+        });
     }
 });
+
 
 // Xóa lịch theo ID (DELETE)
 router.delete('/user/:id', async (req, res) => {

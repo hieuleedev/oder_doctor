@@ -30,8 +30,10 @@ function Booking() {
     const [data, setData] = useState({
         typeTime: "9:00",
         idClinic: 1,
-        iduser: idUser
-    })
+        iduser: idUser,
+        date: "" // 👈 thêm ngày
+    });
+
 
 
 
@@ -140,6 +142,12 @@ function Booking() {
                                 <option value={2}>Phòng Phục Hình Răng</option>
                                 <option value={3}>Phòng Chỉnh Răng Nội Nha</option>
                             </select>
+                            <input
+                                type="date"
+                                value={data.date}
+                                onChange={(e) => setData({ ...data, date: e.target.value })}
+                            />
+
                             <br />
                             <button onClick={handleCreateBook} > SEND </button>
                         </div>

@@ -98,7 +98,7 @@ function User() {
                 <table>
                     <tr className="tr_table">
                         <td>Avatar</td>
-                        <td> <img width="150px" height="150px" src={data.avatar} alt="" />  </td>
+                        <td> <img width="150px" height="150px" src={`http://localhost:5555${data.avatar}`} alt="" />  </td>
                     </tr>
                     <tr>
                         <td>Name</td>

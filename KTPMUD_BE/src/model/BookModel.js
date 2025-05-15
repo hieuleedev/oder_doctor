@@ -5,6 +5,9 @@ const Book = sequelize.define('Book', {
   typeTime: {
     type: DataTypes.STRING
   },
+  dayTime: {
+    type: DataTypes.STRING
+  },
   idUser: {
     type: DataTypes.INTEGER,
     references: {

@@ -138,7 +138,7 @@ function Header() {
                 </div>
                 <div className="header_login">
 
-                    {isLogin ? <> <img onClick={handleClickOpenUser} className="avatar_user" src={data.avatar} alt="" />  <div className="wrapper">
+                    {isLogin ? <> <img onClick={handleClickOpenUser} className="avatar_user" src={`http://localhost:5555${data.avatar}`} alt="" />  <div className="wrapper">
 
                     </div></> : <> <NavLink to="/register" className="header_content_item">ĐĂNG KÝ</NavLink>
                         <NavLink to="/login" className="header_content_item">ĐĂNG NHẬP</NavLink></>}

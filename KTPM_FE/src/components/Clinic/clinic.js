@@ -95,7 +95,7 @@ function Clinic() {
                             <table>
                                 <tr className="tr_table">
                                     <td>Avatar</td>
-                                    <td> <img width="150px" height="150px" src={dataClinic && dataClinic?.doctor?.avatar} alt="" />  </td>
+                                    <td> <img width="150px" height="150px"  src={`http://localhost:5555${dataClinic?.doctor?.avatar}`}alt="" />  </td>
 
                                 </tr>
                                 <tr>
@@ -144,6 +144,7 @@ function Clinic() {
                 <tr>
                     <th>Họ Tên</th>
                     <th>Thời Gian</th>
+                    <th>Ngày khám</th>
                     <th>Phòng Khám</th>
                     <th>Số Điện Thoại</th>
                     <th>Hoàn Thành</th>
@@ -162,7 +163,7 @@ function Clinic() {
                                 <tr key={index}>
                                     <td> {book.Account ? book?.Account?.name : 'User( Đã bị buộc xóa )'}</td>
                                     <td>{book.typeTime}</td>
-
+                                    <td>{new Date(book?.dayTime).toLocaleDateString('vi-VN')}</td>
                                     <td>{book?.Clinic.name}</td>
 
                                     <td>{book.Account ? book.Account.phonenumber : '000000000'}</td>

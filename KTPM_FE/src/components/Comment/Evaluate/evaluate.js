@@ -24,7 +24,7 @@ function Evaluate( { Listcomment } ) {
                                 className="avatar_user image_user_avatar"
                                 src={
                                     comment.Account != null
-                                        ? comment.Account.avatar
+                                        ? `http://localhost:5555${comment.Account.avatar}`
                                         : 'https://phongreviews.com/wp-content/uploads/2022/11/avatar-facebook-mac-dinh-8.jpg'
                                 }
                                 alt=""
